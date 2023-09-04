@@ -20,7 +20,7 @@ services:
         - COMPOSER_MEMORY_LIMIT=-1 composer install --optimize-autoloader --no-progress
 
         # Use the tugboat-specific Drupal settings.
-        - cp "${TUGBOAT_ROOT}/.tugboat/default.settings.php" "${DOCROOT}/sites/default/settings.php"
+        - cp "${TUGBOAT_ROOT}/.tugboat/settings.local.php" "${DOCROOT}/sites/default/settings.php"
 
         # Set file permissions such that Drupal will not complain
         - mkdir -p "${DOCROOT}/sites/default/files"

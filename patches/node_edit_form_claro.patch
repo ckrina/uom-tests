@@ -1,0 +1,122 @@
+diff --git a/core/modules/node/src/NodeForm.php b/core/modules/node/src/NodeForm.php
+index 709b6af93e..72b0a739ba 100644
+--- a/core/modules/node/src/NodeForm.php
++++ b/core/modules/node/src/NodeForm.php
+@@ -3,6 +3,8 @@
+ namespace Drupal\node;
+ 
+ use Drupal\Component\Datetime\TimeInterface;
++use Drupal\Core\Ajax\AjaxResponse;
++use Drupal\Core\Ajax\RedirectCommand;
+ use Drupal\Core\Datetime\DateFormatterInterface;
+ use Drupal\Core\Entity\ContentEntityForm;
+ use Drupal\Core\Entity\EntityRepositoryInterface;
+@@ -10,6 +12,7 @@
+ use Drupal\Core\Form\FormStateInterface;
+ use Drupal\Core\Session\AccountInterface;
+ use Drupal\Core\TempStore\PrivateTempStoreFactory;
++use Drupal\Core\Url;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+ 
+ /**
+@@ -219,6 +222,14 @@ protected function actions(array $form, FormStateInterface $form_state) {
+ 
+     $element['submit']['#access'] = $preview_mode != DRUPAL_REQUIRED || $form_state->get('has_been_previewed');
+ 
++    $element['submit']['#attributes']['class'] = ['entity-meta__submit'];
++    $element['submit']['#ajax'] = [
++      'callback' => [$this, 'ajaxSubmit'],
++    ];
++    $element['saved_since'] = [
++      '#type' => 'item',
++      '#description' => !$node->isNew() ? $this->t('Saved ' . $this->getTimeSinceLastSaved($node) . ' ago') : $this->t('Not saved yet'),
++    ];
+     $element['preview'] = [
+       '#type' => 'submit',
+       '#access' => $preview_mode != DRUPAL_DISABLED && ($node->access('create') || $node->access('update')),
+@@ -261,6 +272,26 @@ public function preview(array $form, FormStateInterface $form_state) {
+     $form_state->setRedirect('entity.node.preview', $route_parameters, $options);
+   }
+ 
++  /**
++   * Returns the time since the node was last saved.
++   */
++  public function getTimeSinceLastSaved($node) {
++    return $this->dateFormatter->formatInterval($this->time->getCurrentTime() - $node->getChangedTime(), 1);
++  }
++
++  /**
++   * Ajax callback for saving the node.
++   */
++  public function ajaxSubmit(array $form, FormStateInterface $form_state) {
++    /** @var \Drupal\node\NodeInterface $node */
++    $node = $this->entity;
++
++    $response = new AjaxResponse();
++    $response->addCommand(new RedirectCommand(Url::fromRoute('entity.node.edit_form', ['node' => $node->id()])
++      ->toString()));
++    return $response;
++  }
++
+   /**
+    * {@inheritdoc}
+    */
+diff --git a/core/themes/claro/css/components/entity-meta.css b/core/themes/claro/css/components/entity-meta.css
+index b308317b15..8af332eea1 100644
+--- a/core/themes/claro/css/components/entity-meta.css
++++ b/core/themes/claro/css/components/entity-meta.css
+@@ -63,3 +63,12 @@
+ .entity-meta__revision {
+   margin-block-start: var(--entity-meta-spacing-l);
+ }
++
++.actions-container {
++  margin-bottom: -1px;
++}
++
++.entity-meta__submit {
++  width: 100%;
++  margin-bottom: 0;
++}
+diff --git a/core/themes/claro/css/components/entity-meta.pcss.css b/core/themes/claro/css/components/entity-meta.pcss.css
+index 890cf33a4f..738b552d5f 100644
+--- a/core/themes/claro/css/components/entity-meta.pcss.css
++++ b/core/themes/claro/css/components/entity-meta.pcss.css
+@@ -54,3 +54,12 @@
+ .entity-meta__revision {
+   margin-block-start: var(--entity-meta-spacing-l);
+ }
++
++.actions-container {
++  margin-bottom: -1px;
++}
++
++.entity-meta__submit {
++  width: 100%;
++  margin-bottom: 0;
++}
+diff --git a/core/themes/claro/templates/node-edit-form.html.twig b/core/themes/claro/templates/node-edit-form.html.twig
+index 78f1b4fce1..9d9377d249 100644
+--- a/core/themes/claro/templates/node-edit-form.html.twig
++++ b/core/themes/claro/templates/node-edit-form.html.twig
+@@ -23,14 +23,13 @@
+   </div>
+   <div class="layout-region layout-region--node-secondary">
+     <div class="layout-region__content">
++      <div class="entity-meta accordion entity-meta__header actions-container">
++        {{ form.footer }}
++        {{ form.actions.submit }}
++        {{ form.actions.saved_since }}
++        {{ form.actions|without('submit', 'saved_since') }}
++      </div>
+       {{ form.advanced }}
+     </div>
+   </div>
+-  <div class="layout-region layout-region--node-footer">
+-    <div class="layout-region__content">
+-      <div class="divider"></div>
+-      {{ form.footer }}
+-      {{ form.actions }}
+-    </div>
+-  </div>
+ </div>
