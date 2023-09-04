@@ -20,7 +20,8 @@
         "drupal/core-composer-scaffold": "^11.x-dev",
         "drupal/core-project-message": "^11.x-dev",
         "drupal/core-recommended": "^11.x-dev",
-        "drupal/navigation": "dev-1.x"
+        "drupal/navigation": "dev-1.x",
+        "drush/drush": "^12.1"
     },
     "conflict": {
         "drupal/drupal": "*"
