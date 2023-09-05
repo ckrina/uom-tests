@@ -31,6 +31,7 @@ services:
         - find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
 
       build:
+        - composer update drupal/navigation --with-all-dependencies
         - vendor/bin/drush site:install demo_umami --account-pass=admin
         - vendor/bin/drush cache:rebuild
 
