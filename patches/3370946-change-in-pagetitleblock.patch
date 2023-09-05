@@ -1,5 +1,5 @@
 diff --git a/core/core.services.yml b/core/core.services.yml
-index 32e39e055eaa01eeaa04ffd761a26c6b6af09305..c9b26ddc454eb27c9608e79d2af7367d044b9c6e 100644
+index 0b093c466998e379f41fba837ce6cafa2302d5e1..cc1446905176f0ad6740ef06a0e244dc1d8b80f9 100644
 --- a/core/core.services.yml
 +++ b/core/core.services.yml
 @@ -1031,6 +1031,14 @@ services:
@@ -1349,10 +1349,10 @@ index 517a571712681243c2097bb01f0e8f1ac6e8791f..fbd2ec51662282e9228af951b4d2050a
 -
  }
 diff --git a/core/modules/system/system.services.yml b/core/modules/system/system.services.yml
-index a1050402556983f6b11f1f92e98491bc7da3d4b1..320b162377c181f4cd056b1e78e72bfdb94ba583 100644
+index 7754d14372852e1957204bcc722d1268537efbda..be6607a82d20b07d43962746913d2cf5c38368f9 100644
 --- a/core/modules/system/system.services.yml
 +++ b/core/modules/system/system.services.yml
-@@ -13,7 +13,7 @@ services:
+@@ -18,7 +18,7 @@ services:
    Drupal\system\SystemManager: '@system.manager'
    system.breadcrumb.default:
      class: Drupal\system\PathBasedBreadcrumbBuilder
