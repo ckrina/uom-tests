@@ -1528,7 +1528,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/navigation.git",
-                "reference": "4161cd4f4d05f6acd58fadeeab12aa348696f619"
+                "reference": "6461e4daad89fcf973c0ea357ac8ecdd0f174a46"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10 || ^11"
