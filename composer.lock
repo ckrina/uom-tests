@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26bfb23f9e2cb7873aa75f958e3ae084",
+    "content-hash": "b5f9e556c5ae1db98484356c447bd852",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1194,12 +1194,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "f30354ab037e023fca2bc943e5460390d16d5d20"
+                "reference": "2f206470235a3ee938773ce61c27318f5f697065"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/f30354ab037e023fca2bc943e5460390d16d5d20",
-                "reference": "f30354ab037e023fca2bc943e5460390d16d5d20",
+                "url": "https://api.github.com/repos/drupal/core/zipball/2f206470235a3ee938773ce61c27318f5f697065",
+                "reference": "2f206470235a3ee938773ce61c27318f5f697065",
                 "shasum": ""
             },
             "require": {
@@ -1347,7 +1347,7 @@
             "support": {
                 "source": "https://github.com/drupal/core/tree/11.x"
             },
-            "time": "2023-07-24T08:07:07+00:00"
+            "time": "2023-09-06T23:13:35+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
@@ -1355,12 +1355,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
-                "reference": "1ccd7db5ff8a5425b5bbba9b9a05e366363c0a51"
+                "reference": "bcfb81592c7ebfecd3f266bd8c736b22f557d07e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-composer-scaffold/zipball/1ccd7db5ff8a5425b5bbba9b9a05e366363c0a51",
-                "reference": "1ccd7db5ff8a5425b5bbba9b9a05e366363c0a51",
+                "url": "https://api.github.com/repos/drupal/core-composer-scaffold/zipball/bcfb81592c7ebfecd3f266bd8c736b22f557d07e",
+                "reference": "bcfb81592c7ebfecd3f266bd8c736b22f557d07e",
                 "shasum": ""
             },
             "require": {
@@ -1395,9 +1395,9 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/10.1.x"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/11.x"
             },
-            "time": "2023-04-30T16:15:32+00:00"
+            "time": "2023-08-26T08:14:31+00:00"
         },
         {
             "name": "drupal/core-project-message",
@@ -1446,12 +1446,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "bc736254f6df3bb9f1af79a0e3693f79ad72c4b5"
+                "reference": "175fb2644d3f8f084c79bd0da21b5a9f86f5ee4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/bc736254f6df3bb9f1af79a0e3693f79ad72c4b5",
-                "reference": "bc736254f6df3bb9f1af79a0e3693f79ad72c4b5",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/175fb2644d3f8f084c79bd0da21b5a9f86f5ee4e",
+                "reference": "175fb2644d3f8f084c79bd0da21b5a9f86f5ee4e",
                 "shasum": ""
             },
             "require": {
@@ -1466,7 +1466,7 @@
                 "guzzlehttp/promises": "~2.0.0",
                 "guzzlehttp/psr7": "~2.5.0",
                 "masterminds/html5": "~2.8.0",
-                "mck89/peast": "~v1.15.2",
+                "mck89/peast": "~v1.15.4",
                 "pear/archive_tar": "~1.4.14",
                 "pear/console_getopt": "~v1.4.3",
                 "pear/pear-core-minimal": "~v1.10.13",
@@ -1520,7 +1520,7 @@
             "support": {
                 "source": "https://github.com/drupal/core-recommended/tree/11.x"
             },
-            "time": "2023-07-17T08:42:11+00:00"
+            "time": "2023-09-05T13:59:07+00:00"
         },
         {
             "name": "drupal/navigation",
