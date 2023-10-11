@@ -45,12 +45,6 @@
                 "web-root": "web/"
             }
         },
-        "patches": {
-            "drupal/core": {
-                "Node edit form Claro": "patches/node_edit_form_claro.patch",
-                "Page title should contextualize the local navigation": "patches/3370946-change-in-pagetitleblock.patch"
-            }
-        },
         "installer-paths": {
             "web/core": [
                 "type:drupal-core"
