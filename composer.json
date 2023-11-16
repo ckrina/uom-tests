@@ -45,6 +45,11 @@
                 "web-root": "web/"
             }
         },
+        "patches": {
+            "drupal/navigation": {
+                "Create a functional prototype of the new top contextual bar": "patches/123.patch"
+            }
+        },
         "installer-paths": {
             "web/core": [
                 "type:drupal-core"

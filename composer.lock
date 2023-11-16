@@ -1528,7 +1528,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/navigation.git",
-                "reference": "c47ece99d4be3e3d423bc720b9a7853a8e0701e4"
+                "reference": "2cecbbc2503de2fe750a8bab4ff23d655c32d924"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10 || ^11"
@@ -1540,7 +1540,7 @@
                 },
                 "drupal": {
                     "version": "1.x-dev",
-                    "datestamp": "1697017584",
+                    "datestamp": "1700040625",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -1567,6 +1567,10 @@
                 {
                     "name": "mherchel",
                     "homepage": "https://www.drupal.org/user/118428"
+                },
+                {
+                    "name": "nod_",
+                    "homepage": "https://www.drupal.org/user/598310"
                 }
             ],
             "homepage": "https://drupal.org/project/navigation",
