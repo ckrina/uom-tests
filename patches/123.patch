@@ -417,7 +417,7 @@ index fa85bd0d7b09841edf428b007bfddb7969852a5b..88d7d9d5845a36ceae7a279cdee96a0a
 +  }
  }
 diff --git a/css/components/toolbar-button.css b/css/components/toolbar-button.css
-index d8daf09b45f546d5fc935db48e1ab82de3c29c9d..b954e4d35126d1181313b771dc9aa591237943cb 100644
+index 25982b56fdd106e73bd040e149582b303352fe28..2fa03c44bbc537a9fefc82972a1d3b5a5f6f7f46 100644
 --- a/css/components/toolbar-button.css
 +++ b/css/components/toolbar-button.css
 @@ -11,8 +11,6 @@
@@ -429,7 +429,7 @@ index d8daf09b45f546d5fc935db48e1ab82de3c29c9d..b954e4d35126d1181313b771dc9aa591
    z-index: 1;
    align-items: center;
    padding: 0.625rem;
-@@ -50,7 +48,13 @@
+@@ -51,7 +49,13 @@
    background-color: var(--admin-toolbar-color-gray-050);
  }
  
@@ -444,7 +444,7 @@ index d8daf09b45f546d5fc935db48e1ab82de3c29c9d..b954e4d35126d1181313b771dc9aa591
    display: block;
    flex-shrink: 0;
    width: 1.25rem;
-@@ -67,15 +71,40 @@
+@@ -68,15 +72,40 @@
    mask-image: var(--icon);
  }
  
@@ -486,7 +486,7 @@ index d8daf09b45f546d5fc935db48e1ab82de3c29c9d..b954e4d35126d1181313b771dc9aa591
    flex-shrink: 0;
    margin-inline-start: auto;
    content: "";
-@@ -92,86 +121,120 @@
+@@ -93,86 +122,120 @@
    mask-image: url("data:image/svg+xml,%3csvg width='14' height='9' viewBox='0 0 14 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 0.999999L7 7L13 1' stroke='%2375767B' stroke-width='2'/%3e%3c/svg%3e");
  }
  
@@ -627,7 +627,7 @@ index d8daf09b45f546d5fc935db48e1ab82de3c29c9d..b954e4d35126d1181313b771dc9aa591
    display: none;
  }
 diff --git a/css/components/toolbar-button.pcss.css b/css/components/toolbar-button.pcss.css
-index 4de2bb70086c819813f8fec517dd735a2eb235fd..3eb5ab045b302d00042c814225c11d767088419c 100644
+index 6a624d69813bcbe03646e95ac1fab89de4b4d78e..3b2ef4d6397b3afbbe67d51d4e89954b229f83ef 100644
 --- a/css/components/toolbar-button.pcss.css
 +++ b/css/components/toolbar-button.pcss.css
 @@ -4,8 +4,6 @@
@@ -639,7 +639,7 @@ index 4de2bb70086c819813f8fec517dd735a2eb235fd..3eb5ab045b302d00042c814225c11d76
    z-index: 1;
    align-items: center;
    padding: 10px;
-@@ -40,6 +38,11 @@
+@@ -41,6 +39,11 @@
      color: var(--admin-toolbar-color-blue-700);
      background-color: var(--admin-toolbar-color-gray-050);
    }
@@ -651,7 +651,7 @@ index 4de2bb70086c819813f8fec517dd735a2eb235fd..3eb5ab045b302d00042c814225c11d76
  
    &::before {
      display: block;
-@@ -55,13 +58,38 @@
+@@ -56,13 +59,38 @@
    }
  }
  
@@ -691,7 +691,7 @@ index 4de2bb70086c819813f8fec517dd735a2eb235fd..3eb5ab045b302d00042c814225c11d76
    &::after {
      flex-shrink: 0;
      margin-inline-start: auto;
-@@ -82,83 +110,121 @@
+@@ -83,83 +111,121 @@
    }
  }
  
@@ -1615,10 +1615,10 @@ index 0000000000000000000000000000000000000000..6aa3d9137fbf58315cd640ef5cc2a356
 \ No newline at end of file
 diff --git a/templates/temp-components/temporary-control-bar-content.twig b/templates/temp-components/temporary-control-bar-content.twig
 new file mode 100644
-index 0000000000000000000000000000000000000000..176d34cc5b6558775c0adb95f458427e1995e175
+index 0000000000000000000000000000000000000000..2b8a752259a03bc4863f6671c9bafd1b10ce11df
 --- /dev/null
 +++ b/templates/temp-components/temporary-control-bar-content.twig
-@@ -0,0 +1,228 @@
+@@ -0,0 +1,230 @@
 +<style>
 +
 +  .temp-breadcrumb__list {
@@ -1822,13 +1822,15 @@ index 0000000000000000000000000000000000000000..176d34cc5b6558775c0adb95f458427e
 +  {% if not temporary_is_admin_path or temporary_route_name == 'entity.node.canonical' %}
 +    <div class="toolbar">
 +      <div class="toolbar-bar">
-+        <div class="contextual-toolbar-tab control-bar__controls">
-+          {% include '@navigation/temp-components/toolbar-button.twig' with {
-+            attributes: create_attribute(),
-+            icon: 'pencil',
-+            text: 'Turn on In Place Editing',
-+            extra_classes: 'toolbar-button--weight--400',
-+          } only %}
++        <div class="control-bar__controls">
++          <div class="contextual-toolbar-tab">
++            {% include '@navigation/temp-components/toolbar-button.twig' with {
++              attributes: create_attribute(),
++              icon: 'pencil',
++              text: 'Turn on In Place Editing',
++              extra_classes: 'toolbar-button--weight--400',
++            } only %}
++          </div>
 +          {% if temporary_route_name == 'entity.node.canonical' %}
 +            {% include '@navigation/temp-components/toolbar-dropdown.twig' %}
 +          {% endif %}
