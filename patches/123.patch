@@ -1702,10 +1702,10 @@ index 0000000000000000000000000000000000000000..6aa3d9137fbf58315cd640ef5cc2a356
 \ No newline at end of file
 diff --git a/templates/temp-components/temporary-control-bar-content.twig b/templates/temp-components/temporary-control-bar-content.twig
 new file mode 100644
-index 0000000000000000000000000000000000000000..17053dd3abb17c06c48a41dd3b804b6e8fb85252
+index 0000000000000000000000000000000000000000..4eb9e5445121bc90556a70433c7d71bbdab7e5d6
 --- /dev/null
 +++ b/templates/temp-components/temporary-control-bar-content.twig
-@@ -0,0 +1,240 @@
+@@ -0,0 +1,235 @@
 +<style>
 +
 +  .temp-breadcrumb__list {
@@ -1793,11 +1793,6 @@ index 0000000000000000000000000000000000000000..17053dd3abb17c06c48a41dd3b804b6e
 +
 +  .node-form .layout-node-form {
 +    grid-template-columns: 1fr;
-+  }
-+
-+  .node-form .layout-region--node-main,
-+  .node-form .layout-region--node-footer {
-+    width: 100%;
 +  }
 +
 +  .node-form .layout-region--node-secondary {
