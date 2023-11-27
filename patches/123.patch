@@ -67,7 +67,7 @@ index 67b6ccdc5f3968e9361298e4015ad797d914833e..1e7cbdfb47fd27892301ab37452f47e9
    --admin-toolbar-color-blue-700: var(--color-blue-700, #002e9a);
 diff --git a/css/components/admin-extra-toolbar.css b/css/components/admin-extra-toolbar.css
 new file mode 100644
-index 0000000000000000000000000000000000000000..12f125cf158ab1e76483c92e8da23051abf490af
+index 0000000000000000000000000000000000000000..9ed3cd30bdcd887b7265e669243b4c408f0154cb
 --- /dev/null
 +++ b/css/components/admin-extra-toolbar.css
 @@ -0,0 +1,40 @@
@@ -85,7 +85,7 @@ index 0000000000000000000000000000000000000000..12f125cf158ab1e76483c92e8da23051
 +@media (min-width: 64rem) {
 +  .admin-extra-toolbar {
 +    position: fixed;
-+    z-index: 490;
++    z-index: 499;
 +    display: flex;
 +    overflow: auto;
 +    flex-direction: column;
@@ -113,7 +113,7 @@ index 0000000000000000000000000000000000000000..12f125cf158ab1e76483c92e8da23051
 +}
 diff --git a/css/components/admin-extra-toolbar.pcss.css b/css/components/admin-extra-toolbar.pcss.css
 new file mode 100644
-index 0000000000000000000000000000000000000000..1bab661ee4d614409cc2554c00c1f41fe061b302
+index 0000000000000000000000000000000000000000..b3ff08767d2f2cde026ad6a6c1b7eb50ed7bc4e8
 --- /dev/null
 +++ b/css/components/admin-extra-toolbar.pcss.css
 @@ -0,0 +1,34 @@
@@ -125,7 +125,7 @@ index 0000000000000000000000000000000000000000..1bab661ee4d614409cc2554c00c1f41f
 +
 +  @media (--admin-toolbar-desktop) {
 +    position: fixed;
-+    z-index: 490;
++    z-index: 499;
 +    display: flex;
 +    overflow: auto;
 +    flex-direction: column;
@@ -219,7 +219,7 @@ index 439fd97a8948d91cce27ddecd1540dd29aaa12d1..41350f4898936d81c805a2df6b01a2ea
    position: sticky;
    z-index: 99;
 diff --git a/css/components/control-bar.css b/css/components/control-bar.css
-index b4f2eb12b3cd7b51ab76d2a219f988dffa973a05..369c39c6541c285840304ff71647b9013bd403c7 100644
+index b4f2eb12b3cd7b51ab76d2a219f988dffa973a05..d97a371fefdca05203615aafc53eb9edaddb8cb9 100644
 --- a/css/components/control-bar.css
 +++ b/css/components/control-bar.css
 @@ -4,38 +4,72 @@
@@ -233,10 +233,11 @@ index b4f2eb12b3cd7b51ab76d2a219f988dffa973a05..369c39c6541c285840304ff71647b901
    position: relative;
    z-index: 499;
 -  padding: var(--admin-toolbar-space-xs);
+-  background-color: white;
 +  display: flex;
 +  box-sizing: border-box;
 +  padding: var(--admin-toolbar-space-xxs);
-   background-color: white;
++  background-color: rgba(255, 255, 255, 0.85);
    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.35);
  }
 +.control-bar::before,
@@ -253,8 +254,8 @@ index b4f2eb12b3cd7b51ab76d2a219f988dffa973a05..369c39c6541c285840304ff71647b901
 +    inset-block-start: 0;
 +    inset-inline-start: 0;
 +    width: 100vw;
-+    padding-block: var(--admin-toolbar-space-s);
-+    padding-inline: calc(var(--drupal-displace-offset-left) + var(--admin-toolbar-space-xl)) var(--admin-toolbar-space-xl);
++    padding-block: var(--admin-toolbar-space-xs);
++    padding-inline: calc(var(--drupal-displace-offset-left) + var(--admin-toolbar-space-xl)) calc(var(--admin-toolbar-space-xl) * 1.5);
 +    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.06), 0 4px 4px 0 rgba(0, 0, 0, 0.08);
 +  }
 +}
@@ -318,7 +319,7 @@ index b4f2eb12b3cd7b51ab76d2a219f988dffa973a05..369c39c6541c285840304ff71647b901
 +  }
  }
 diff --git a/css/components/control-bar.pcss.css b/css/components/control-bar.pcss.css
-index fa85bd0d7b09841edf428b007bfddb7969852a5b..88d7d9d5845a36ceae7a279cdee96a0ad3bd2f91 100644
+index fa85bd0d7b09841edf428b007bfddb7969852a5b..38493f5260864c088bd9769a2749b64f59a22fb4 100644
 --- a/css/components/control-bar.pcss.css
 +++ b/css/components/control-bar.pcss.css
 @@ -1,40 +1,72 @@
@@ -332,10 +333,11 @@ index fa85bd0d7b09841edf428b007bfddb7969852a5b..88d7d9d5845a36ceae7a279cdee96a0a
    position: relative;
    z-index: 499;
 -  padding: var(--admin-toolbar-space-xs);
+-  background-color: white;
 +  display: flex;
 +  box-sizing: border-box;
 +  padding: var(--admin-toolbar-space-xxs);
-   background-color: white;
++  background-color: rgba(255, 255, 255, 0.85);
    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.35);
  
 +  &::before,
@@ -353,8 +355,8 @@ index fa85bd0d7b09841edf428b007bfddb7969852a5b..88d7d9d5845a36ceae7a279cdee96a0a
 +    inset-block-start: 0;
 +    inset-inline-start: 0;
 +    width: 100vw;
-+    padding-block: var(--admin-toolbar-space-s);
-+    padding-inline: calc(var(--drupal-displace-offset-left) + var(--admin-toolbar-space-xl)) var(--admin-toolbar-space-xl);
++    padding-block: var(--admin-toolbar-space-xs);
++    padding-inline: calc(var(--drupal-displace-offset-left) + var(--admin-toolbar-space-xl)) calc(var(--admin-toolbar-space-xl) * 1.5);
 +    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.06), 0 4px 4px 0 rgba(0, 0, 0, 0.08);
    }
  }
@@ -417,7 +419,7 @@ index fa85bd0d7b09841edf428b007bfddb7969852a5b..88d7d9d5845a36ceae7a279cdee96a0a
 +  }
  }
 diff --git a/css/components/toolbar-button.css b/css/components/toolbar-button.css
-index 25982b56fdd106e73bd040e149582b303352fe28..2fa03c44bbc537a9fefc82972a1d3b5a5f6f7f46 100644
+index 983f198a9508d6cb6ae8ab91b261760e42c7b008..7658cc6db54e34c38161beaf3a37ef206f368b11 100644
 --- a/css/components/toolbar-button.css
 +++ b/css/components/toolbar-button.css
 @@ -11,8 +11,6 @@
@@ -429,6 +431,15 @@ index 25982b56fdd106e73bd040e149582b303352fe28..2fa03c44bbc537a9fefc82972a1d3b5a
    z-index: 1;
    align-items: center;
    padding: 0.625rem;
+@@ -23,7 +21,7 @@
+   word-break: break-word;
+   color: var(--admin-toolbar-color-gray-800);
+   border: 0;
+-  border-radius: var(--admin-toolbar-space-xs);
++  border-radius: 2px;
+   background-color: transparent;
+   font-size: var(--admin-toolbar-font-size-s);
+   font-weight: 700;
 @@ -51,7 +49,13 @@
    background-color: var(--admin-toolbar-color-gray-050);
  }
@@ -444,24 +455,58 @@ index 25982b56fdd106e73bd040e149582b303352fe28..2fa03c44bbc537a9fefc82972a1d3b5a
    display: block;
    flex-shrink: 0;
    width: 1.25rem;
-@@ -68,15 +72,40 @@
+@@ -68,15 +72,74 @@
    mask-image: var(--icon);
  }
  
 +.toolbar-button--primary {
 +  color: white;
-+  background-color: var(--admin-toolbar-color-blue-450);
++  background-color: var(--admin-toolbar-color-blue-600);
++  padding: 0.75rem 1.5rem;
 +}
 +
 +.toolbar-button--primary:hover,
 +.toolbar-button--primary:focus {
 +  color: white;
-+  background-color: var(--admin-toolbar-color-blue-650);
++  background-color: var(--admin-toolbar-color-blue-700);
++}
++
++.toolbar-button--actions {
++  margin-inline-start: 1rem;
++}
++
++.toolbar-button--actions::after {
++  order: 3;
++}
++
++.toolbar-button--icon--sidebar-toggle-end {
++  width: 4rem;
++  height: 4rem;
++  position: fixed;
++  top: 0;
++  right: 0;
++  border-inline-start: 1px solid var(--admin-toolbar-color-gray-100);
++  border-radius: 0;
++  display: flex;
++  align-content: center;
++  justify-content: center;
++}
++
++.admin-extra-toolbar::before {
++  position: fixed;
++  display: block;
++  content: "";
++  width: 3.9375rem;
++  height: 1px;
++  top: 4rem;
++  right: 0;
++  background-color: white;
++  z-index: 500;
 +}
 +
 +.toolbar-button--secondary--expanded[aria-expanded="true"] {
-+  color: white;
-+  background-color: #343330;
++  color: #343330;
++  background-color: white;
 +}
 +
 +.toolbar-button--tertiary--expanded[aria-expanded="true"] {
@@ -486,7 +531,7 @@ index 25982b56fdd106e73bd040e149582b303352fe28..2fa03c44bbc537a9fefc82972a1d3b5a
    flex-shrink: 0;
    margin-inline-start: auto;
    content: "";
-@@ -93,86 +122,120 @@
+@@ -93,86 +156,120 @@
    mask-image: url("data:image/svg+xml,%3csvg width='14' height='9' viewBox='0 0 14 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 0.999999L7 7L13 1' stroke='%2375767B' stroke-width='2'/%3e%3c/svg%3e");
  }
  
@@ -627,7 +672,7 @@ index 25982b56fdd106e73bd040e149582b303352fe28..2fa03c44bbc537a9fefc82972a1d3b5a
    display: none;
  }
 diff --git a/css/components/toolbar-button.pcss.css b/css/components/toolbar-button.pcss.css
-index 6a624d69813bcbe03646e95ac1fab89de4b4d78e..3b2ef4d6397b3afbbe67d51d4e89954b229f83ef 100644
+index b34ea27570ae4f64d73f62181208f1cbecb7af07..4ac3b280fce5af832b90c460103b44069f6b2a78 100644
 --- a/css/components/toolbar-button.pcss.css
 +++ b/css/components/toolbar-button.pcss.css
 @@ -4,8 +4,6 @@
@@ -639,6 +684,15 @@ index 6a624d69813bcbe03646e95ac1fab89de4b4d78e..3b2ef4d6397b3afbbe67d51d4e89954b
    z-index: 1;
    align-items: center;
    padding: 10px;
+@@ -15,7 +13,7 @@
+   word-break: break-word;
+   color: var(--admin-toolbar-color-gray-800);
+   border: 0;
+-  border-radius: var(--admin-toolbar-space-xs);
++  border-radius: 2px;
+   background-color: transparent;
+   font-size: var(--admin-toolbar-font-size-s);
+   font-weight: 700;
 @@ -41,6 +39,11 @@
      color: var(--admin-toolbar-color-blue-700);
      background-color: var(--admin-toolbar-color-gray-050);
@@ -651,24 +705,57 @@ index 6a624d69813bcbe03646e95ac1fab89de4b4d78e..3b2ef4d6397b3afbbe67d51d4e89954b
  
    &::before {
      display: block;
-@@ -56,13 +59,38 @@
+@@ -56,13 +59,71 @@
    }
  }
  
 +.toolbar-button--primary {
 +  color: white;
-+  background-color: var(--admin-toolbar-color-blue-450);
++  background-color: var(--admin-toolbar-color-blue-600);
++  padding: 12px 24px;
 +
 +  &:hover,
 +  &:focus {
 +    color: white;
-+    background-color: var(--admin-toolbar-color-blue-650);
++    background-color: var(--admin-toolbar-color-blue-700);
 +  }
 +}
 +
++.toolbar-button--actions {
++  margin-inline-start: 16px;
++  &::after {
++    order: 3;
++  }
++}
++
++.toolbar-button--icon--sidebar-toggle-end {
++  width: 64px;
++  height: 64px;
++  position: fixed;
++  top: 0;
++  right: 0;
++  border-inline-start: 1px solid var(--admin-toolbar-color-gray-100);
++  border-radius: 0;
++  display: flex;
++  align-content: center;
++  justify-content: center;
++}
++
++.admin-extra-toolbar::before {
++  position: fixed;
++  display: block;
++  content: "";
++  width: 63px;
++  height: 1px;
++  top: 64px;
++  right: 0;
++  background-color: white;
++  z-index: 500;
++}
++
 +.toolbar-button--secondary--expanded[aria-expanded='true'] {
-+  color: white;
-+  background-color: #343330;
++  color: #343330;
++  background-color: white;
 +}
 +
 +.toolbar-button--tertiary--expanded[aria-expanded='true'] {
@@ -691,7 +778,7 @@ index 6a624d69813bcbe03646e95ac1fab89de4b4d78e..3b2ef4d6397b3afbbe67d51d4e89954b
    &::after {
      flex-shrink: 0;
      margin-inline-start: auto;
-@@ -83,83 +111,121 @@
+@@ -83,83 +144,121 @@
    }
  }
  
@@ -836,7 +923,7 @@ index 6a624d69813bcbe03646e95ac1fab89de4b4d78e..3b2ef4d6397b3afbbe67d51d4e89954b
    }
 diff --git a/css/components/toolbar-dropdown.css b/css/components/toolbar-dropdown.css
 new file mode 100644
-index 0000000000000000000000000000000000000000..123fd0b0eb3b74b68cc72c6cde386a59db66a369
+index 0000000000000000000000000000000000000000..e4a5daa4e9f8b294b21ad9a8cc5c4f6b819338e4
 --- /dev/null
 +++ b/css/components/toolbar-dropdown.css
 @@ -0,0 +1,56 @@
@@ -886,7 +973,7 @@ index 0000000000000000000000000000000000000000..123fd0b0eb3b74b68cc72c6cde386a59
 +  position: fixed;
 +  z-index: 1000;
 +  display: none;
-+  width: 7.75rem;
++  width: 11.25rem;
 +  padding: var(--admin-toolbar-space-l) var(--admin-toolbar-space-s);
 +  border-radius: var(--admin-toolbar-space-xs);
 +  background: white;
@@ -898,7 +985,7 @@ index 0000000000000000000000000000000000000000..123fd0b0eb3b74b68cc72c6cde386a59
 +}
 diff --git a/css/components/toolbar-dropdown.pcss.css b/css/components/toolbar-dropdown.pcss.css
 new file mode 100644
-index 0000000000000000000000000000000000000000..76bad9f6f6aeee87298b13e9853510dad89434cf
+index 0000000000000000000000000000000000000000..d31c05eaa58a9f7fcbaceab0e79332ff463adf8e
 --- /dev/null
 +++ b/css/components/toolbar-dropdown.pcss.css
 @@ -0,0 +1,48 @@
@@ -940,7 +1027,7 @@ index 0000000000000000000000000000000000000000..76bad9f6f6aeee87298b13e9853510da
 +  position: fixed;
 +  z-index: 1000;
 +  display: none;
-+  width: 124px;
++  width: 180px;
 +  padding: var(--admin-toolbar-space-l) var(--admin-toolbar-space-s);
 +  border-radius: var(--admin-toolbar-space-xs);
 +  background: white;
@@ -1615,16 +1702,16 @@ index 0000000000000000000000000000000000000000..6aa3d9137fbf58315cd640ef5cc2a356
 \ No newline at end of file
 diff --git a/templates/temp-components/temporary-control-bar-content.twig b/templates/temp-components/temporary-control-bar-content.twig
 new file mode 100644
-index 0000000000000000000000000000000000000000..2b8a752259a03bc4863f6671c9bafd1b10ce11df
+index 0000000000000000000000000000000000000000..17053dd3abb17c06c48a41dd3b804b6e8fb85252
 --- /dev/null
 +++ b/templates/temp-components/temporary-control-bar-content.twig
-@@ -0,0 +1,230 @@
+@@ -0,0 +1,240 @@
 +<style>
 +
 +  .temp-breadcrumb__list {
 +    display: flex;
 +    flex-wrap: wrap;
-+    gap: var(--admin-toolbar-space-s);
++    gap: var(--admin-toolbar-space-xs);
 +    padding-inline-start: 0;
 +    margin: 0;
 +  }
@@ -1634,6 +1721,16 @@ index 0000000000000000000000000000000000000000..2b8a752259a03bc4863f6671c9bafd1b
 +    color: var(--admin-toolbar-color-gray-950);
 +    font-size: 0.8125rem;
 +    font-weight: 700;
++  }
++
++  .temp-breadcrumb__item:first-child {
++    padding-right: var(--admin-toolbar-space-xxs);
++  }
++
++  .temp-breadcrumb__item:not(:first-child) .temp-breadcrumb__link,
++  .temp-breadcrumb__item:not(:first-child) .temp-breadcrumb__text {
++    color: var(--admin-toolbar-color-gray-800);
++    font-weight: 400;
 +  }
 +
 +  .temp-breadcrumb__link {
@@ -1685,7 +1782,7 @@ index 0000000000000000000000000000000000000000..2b8a752259a03bc4863f6671c9bafd1b
 +    background-position: center center;
 +    background-size: 4px auto;
 +    background-color: transparent;
-+    margin-inline-end: var(--admin-toolbar-space-s);
++    margin-inline-end: var(--admin-toolbar-space-xs);
 +    margin-block-start: 6px;
 +  }
 +
@@ -1805,7 +1902,7 @@ index 0000000000000000000000000000000000000000..2b8a752259a03bc4863f6671c9bafd1b
 +    } only %}
 +    {% include '@navigation/temp-components/toolbar-button.twig' with {
 +      attributes: create_attribute(),
-+      text: 'Save',
++      text: 'Save (this translation)',
 +      extra_classes: 'toolbar-button--primary',
 +    } only %}
 +
@@ -1875,14 +1972,14 @@ index 0000000000000000000000000000000000000000..9287e122154d775087bfa6e78585a5b1
 +</{{html_tag|default('button')}}>
 diff --git a/templates/temp-components/toolbar-dropdown.twig b/templates/temp-components/toolbar-dropdown.twig
 new file mode 100644
-index 0000000000000000000000000000000000000000..a2677ff1f8be5324397f15dd0bdf9ce935e132a9
+index 0000000000000000000000000000000000000000..af82aac1ae725fe7c6b4f257b368956f5337afe0
 --- /dev/null
 +++ b/templates/temp-components/toolbar-dropdown.twig
 @@ -0,0 +1,32 @@
 +{% include '@navigation/temp-components/toolbar-button.twig' with {
 +  attributes: create_attribute({'aria-expanded': false, 'aria-controls': 'toolbar-dropdown-id', 'aria-expanded': 'false', 'data-drupal-dropdown': 'true'}),
-+  text: 'More options',
-+  extra_classes: 'toolbar-button--arrow-first toolbar-button--weight--400 toolbar-button--tertiary--expanded',
++  text: 'More actions',
++  extra_classes: 'toolbar-button--weight--400 toolbar-button--tertiary--expanded toolbar-button--actions',
 +} only %}
 +<div class="toolbar-dropdown__menu" id="toolbar-dropdown-id">
 +  <ul class="toolbar-dropdown__list">
