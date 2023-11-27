@@ -16,12 +16,12 @@
     ],
     "require": {
         "composer/installers": "^2.0",
-        "cweagans/composer-patches": "^1.7",
-        "drupal/core-composer-scaffold": "^11.x-dev",
-        "drupal/core-project-message": "^11.x-dev",
-        "drupal/core-recommended": "^11.x-dev",
-        "drupal/navigation": "dev-1.x",
-        "drush/drush": "^12.1"
+        "cweagans/composer-patches": "~1.0",
+        "drupal/core-composer-scaffold": "^11",
+        "drupal/core-project-message": "^11",
+        "drupal/core-recommended": "^11",
+        "drush/drush": "^12.4.3",
+        "drupal/navigation": "dev-1.x"
     },
     "conflict": {
         "drupal/drupal": "*"
