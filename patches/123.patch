@@ -67,7 +67,7 @@ index 67b6ccdc5f3968e9361298e4015ad797d914833e..1e7cbdfb47fd27892301ab37452f47e9
    --admin-toolbar-color-blue-700: var(--color-blue-700, #002e9a);
 diff --git a/css/components/admin-extra-toolbar.css b/css/components/admin-extra-toolbar.css
 new file mode 100644
-index 0000000000000000000000000000000000000000..9ed3cd30bdcd887b7265e669243b4c408f0154cb
+index 0000000000000000000000000000000000000000..152967ea53f50d14118cac7372906376b92070e9
 --- /dev/null
 +++ b/css/components/admin-extra-toolbar.css
 @@ -0,0 +1,40 @@
@@ -85,7 +85,7 @@ index 0000000000000000000000000000000000000000..9ed3cd30bdcd887b7265e669243b4c40
 +@media (min-width: 64rem) {
 +  .admin-extra-toolbar {
 +    position: fixed;
-+    z-index: 499;
++    z-index: 498;
 +    display: flex;
 +    overflow: auto;
 +    flex-direction: column;
@@ -113,7 +113,7 @@ index 0000000000000000000000000000000000000000..9ed3cd30bdcd887b7265e669243b4c40
 +}
 diff --git a/css/components/admin-extra-toolbar.pcss.css b/css/components/admin-extra-toolbar.pcss.css
 new file mode 100644
-index 0000000000000000000000000000000000000000..b3ff08767d2f2cde026ad6a6c1b7eb50ed7bc4e8
+index 0000000000000000000000000000000000000000..16b905caa5a8fab363ff23213c78010f05a2b795
 --- /dev/null
 +++ b/css/components/admin-extra-toolbar.pcss.css
 @@ -0,0 +1,34 @@
@@ -125,7 +125,7 @@ index 0000000000000000000000000000000000000000..b3ff08767d2f2cde026ad6a6c1b7eb50
 +
 +  @media (--admin-toolbar-desktop) {
 +    position: fixed;
-+    z-index: 499;
++    z-index: 498;
 +    display: flex;
 +    overflow: auto;
 +    flex-direction: column;
