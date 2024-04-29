@@ -1,6 +1,6 @@
 services:
   php:
-    image: tugboatqa/php:8.2-apache
+    image: tugboatqa/php:8.3-apache
     default: true
     depends: mysql
     commands:
@@ -48,4 +48,3 @@ services:
         - mysql -e "SET GLOBAL max_allowed_packet=536870912;"
         # Ensure this packet size persists even if MySQL restarts.
         - echo "max_allowed_packet=536870912" >> /etc/mysql/conf.d/tugboat.cnf
-
