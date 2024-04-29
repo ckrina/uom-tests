@@ -19,7 +19,8 @@
         "cweagans/composer-patches": "~1.0",
         "drupal/core-composer-scaffold": "^10",
         "drupal/core-project-message": "^11.x-dev",
-        "drupal/core-recommended": "11.x-dev"
+        "drupal/core-recommended": "11.x-dev",
+        "drush/drush": "^12.5.1"
     },
     "conflict": {
         "drupal/drupal": "*"
